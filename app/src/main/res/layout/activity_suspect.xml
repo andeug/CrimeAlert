@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.andrewsimiyu.crimealert.Suspect"
+    android:background="@color/colorPrimaryDark"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical"
+    android:text="@string/text_size20">
+
+    <TextView
+        android:id="@+id/tvSuspect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/tvSuspect"
+        android:textColor="@color/White"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etFname"
+        style="@android:style/Animation.Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:hint="@string/etEnterFirstName"
+        android:inputType="textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <EditText
+        android:id="@+id/etSname"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etEnterSurname"
+        android:inputType="textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="148dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etEnterAge"
+        android:inputType="number"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <EditText
+        android:id="@+id/etTelno"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="195dp"
+        android:ems="14"
+        android:background="#03DAC6"
+        android:gravity="center"
+        android:hint="@string/etPhone"
+        android:inputType="phone"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="160dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etDescription"
+        android:inputType="textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/btnDone"
+        android:textColor="@color/Maroon" />
+
+    <EditText
+        android:id="@+id/etGender"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:layout_alignStart="@+id/etFname"
+        android:layout_centerVertical="true"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:hint="@string/etGender"
+        android:inputType="text"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown" />
+
+    <ImageView
+        android:id="@+id/ivAttachment"
+        android:layout_width="104dp"
+        android:layout_height="59dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="78dp"
+        android:layout_marginStart="49dp"
+        android:src="@drawable/ic_attach_file_black_24dp"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.andrewsimiyu.crimealert.UploadFile">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:id="@+id/tvHeading"
+        android:text="@string/etTouchUpload"
+        android:textColor="@color/White"
+        android:textStyle="bold"/>
+    <ImageView
+        android:id="@+id/ivAttachment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_attach_file_black_24dp"
+        android:layout_centerVertical="true"
+        tools:ignore="ContentDescription,RtlHardcoded"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_file_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_below="@+id/ivAttachment"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_upload"
+        android:text="@string/etUpload"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textColor="@color/Maroon"
+        android:background="#039be5"/>
+
+</RelativeLayout>

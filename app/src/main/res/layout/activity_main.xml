@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.andrewsimiyu.crimealert.MainActivity"
+    android:background="@color/colorPrimaryDark"
+    android:padding="20dp">
+
+    <TextView
+        android:text="@string/tvUserRegistrationForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tvSuspect"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#fff"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#03DAC6"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/tvSuspect"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editTextF_Name"
+        android:hint="@string/etEnterYourFirstName"
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#03DAC6"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/editTextF_Name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editTextL_Name"
+        android:hint="@string/etEnterYourLastName"
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_below="@+id/editTextL_Name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editTextEmail"
+        android:hint="@string/etEmail"
+        android:background="#03DAC6"
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/editTextPassword"
+        android:hint="@string/etPassword"
+        android:background="#03DAC6"
+        android:gravity="center"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <Button
+        android:text="@string/etRegister"
+        android:textColor="@color/Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Submit"
+        />
+
+    <Button
+        android:text="@string/etRegOrLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/Login"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.andrewsimiyu.crimealert.Vehicle"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/tvVehicle"
+        android:textColor="#fff"
+        android:textSize="20sp"
+         />
+
+    <ImageView
+        android:id="@+id/ivUpload"
+        android:layout_width="92dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/tvVehicle"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/ic_attach_file_black_24dp"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/etPlateNo"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etPlateNo"
+        android:inputType="text|textCapCharacters|textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <EditText
+        android:id="@+id/etModel"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="223dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etModel"
+        android:inputType="text|textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="153dp"
+        android:background="#03DAC6"
+        android:ems="14"
+        android:gravity="center"
+        android:hint="@string/etDescription"
+        android:inputType="textShortMessage|textPersonName"
+        android:textColor="@color/Blue"
+        android:textColorHint="@color/saddlebrown"/>
+
+    <Button
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="36dp"
+        android:layout_toEndOf="@+id/tvVehicle"
+        android:text="@string/btnDone" />
+</RelativeLayout>
