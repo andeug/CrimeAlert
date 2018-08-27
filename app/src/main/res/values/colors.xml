@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF008080</color>
     <color name="colorPrimaryDark">#FF008080</color>
-    <color name="colorAccent">#FF00FF00</color>
+    <color name="colorAccent">#FFFF0000</color>
     <color name="White">#FFFFFFFF</color>
     <color name="Silver">#FFC0C0C0</color>
     <color name="Gray">#FF808080</color>
@@ -22,4 +22,5 @@
     <color name="Pink">#FF4081</color>
     <color name="brown">#A52A2A</color>
     <color name="saddlebrown">#8B4513</color>
+    <color name="yellow_green">#9acd32</color>
 </resources>

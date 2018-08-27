@@ -27,11 +27,15 @@ public class UploadFile extends AppCompatActivity implements View.OnClickListene
     private static final int PICK_FILE_REQUEST = 1;
     private static final String TAG = UploadFile.class.getSimpleName();
     private String selectedFilePath;
-    private String SERVER_URL = "https://andrewsimiyu.000webhostapp.com/uploads/UploadToServer.php";
+    private String SERVER_URL;
     ImageView ivAttachment;
     Button bUpload;
     TextView tvFileName;
     ProgressDialog dialog;
+
+    public UploadFile() {
+        SERVER_URL = "https://andrewsimiyu.000webhostapp.com/uploads/UploadToServer.php";
+    }
 
 
     @Override
@@ -120,7 +124,7 @@ public class UploadFile extends AppCompatActivity implements View.OnClickListene
 
         int bytesRead,bytesAvailable,bufferSize;
         byte[] buffer;
-        int maxBufferSize = 1 * 1024 * 1024;
+        int maxBufferSize = 1024 * 1024;
         File selectedFile = new File(selectedFilePath);
 
 

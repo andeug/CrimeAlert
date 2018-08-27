@@ -19,12 +19,16 @@ public class UserLoginActivity extends AppCompatActivity {
     Button LogIn ;
     String PasswordHolder, EmailHolder;
     String finalResult ;
-    String HttpURL = "https://andrewsimiyu.000webhostapp.com/CrimeAlert/UserLogin.php";
+    String HttpURL;
     Boolean CheckEditText ;
     ProgressDialog progressDialog;
     HashMap<String,String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
     public static final String UserEmail = "";
+
+    public UserLoginActivity() {
+        HttpURL = "https://andrewsimiyu.000webhostapp.com/CrimeAlert/UserLogin.php";
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +90,8 @@ public class UserLoginActivity extends AppCompatActivity {
 
                     finish();
 
-                    Intent intent = new Intent(UserLoginActivity.this, DashboardActivity.class);
+                    Intent intent = new Intent(UserLoginActivity.this,
+                            Navigation.class);
 
                     intent.putExtra(UserEmail,email);
 

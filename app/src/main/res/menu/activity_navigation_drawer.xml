@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_suspect"
+            android:icon="@drawable/suspect"
+            android:title="@string/suspect_form" />
+        <item
+            android:id="@+id/nav_witness"
+            android:icon="@drawable/witnessbtn"
+            android:title="@string/witness_form" />
+        <item
+            android:id="@+id/nav_vehicle"
+            android:icon="@drawable/vehiclebtn"
+            android:title="@string/vehicle_form" />
+        <item
+            android:id="@+id/nav_Missing"
+            android:icon="@drawable/misingbtn"
+            android:title="@string/missing_person_form" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/tools" />
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/send" />
+        </menu>
+    </item>
+
+</menu>

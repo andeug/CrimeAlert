@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.andrewsimiyu.crimealert.MainActivity"
     android:background="@color/colorPrimaryDark"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:textSize="@dimen/textSize16sp">
 
     <TextView
         android:text="@string/tvUserRegistrationForm"
@@ -17,17 +18,17 @@
         android:id="@+id/tvSuspect"
         android:gravity="center"
         android:textSize="20sp"
-        android:textColor="#fff"/>
+        android:textColor="@color/Aqua"/>
 
     <EditText
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#03DAC6"
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_below="@+id/tvSuspect"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/editTextF_Name"
         android:hint="@string/etEnterYourFirstName"
         android:gravity="center"
@@ -42,7 +43,7 @@
         android:ems="10"
         android:layout_below="@+id/editTextF_Name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/editTextL_Name"
         android:hint="@string/etEnterYourLastName"
         android:gravity="center"
@@ -56,7 +57,7 @@
         android:ems="10"
         android:layout_below="@+id/editTextL_Name"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/editTextEmail"
         android:hint="@string/etEmail"
         android:background="#03DAC6"
@@ -72,7 +73,7 @@
         android:ems="10"
         android:layout_below="@+id/editTextEmail"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/editTextPassword"
         android:hint="@string/etPassword"
         android:background="#03DAC6"
@@ -87,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:id="@+id/Submit"
         />
 
@@ -97,7 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/Submit"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_bg_rounded_corners"
+        android:textColor="@color/Black"
         android:id="@+id/Login"
         />
 

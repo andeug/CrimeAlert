@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.andrewsimiyu.crimealert.Emergency"
+    android:paddingStart="30dp"
+    android:fontFamily="sans-serif-medium"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvemergency"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:ems="14"
+            android:gravity="center"
+            android:textColor="@color/Aqua"
+            android:text="@string/emergency_form"
+            android:layout_margin="10dp"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <Spinner
+           android:id="@+id/spinner"
+           android:layout_width="wrap_content"
+           android:layout_height="35dp"
+           android:ems="14"
+           android:layout_margin="4dp"
+           android:background="#03DAC6"
+
+           />
+
+
+   </LinearLayout>
+
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/btnDone"
+           android:layout_marginStart="95dp"
+           android:layout_marginTop="50dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/button_bg_rounded_corners"
+           android:text="@string/submit"
+           android:textColor="@color/Black" />
+
+   </LinearLayout>
+
+
+
+</LinearLayout>

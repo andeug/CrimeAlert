@@ -2,52 +2,58 @@ package com.example.andrewsimiyu.crimealert;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class MissingPerson extends AppCompatActivity {
 
-    ImageButton btnUpload;
     Button Done;
-    EditText F_name, S_name, Age, Gender, Tel_no, Description;
+    EditText F_name, S_name, Age, Tel_no, Description;
     String F_name_Holder, Age_Holder, Gender_Holder, Description_Holder, S_name_Holder, Tel_no_holder;
     String finalResult;
     String HttpURL;
-    Boolean CheckEditText;
     ProgressDialog progressDialog;
     HashMap<String, String> hashMap = new HashMap<>();
     HttpParse httpParse = new HttpParse();
     LocationManager locationManager;
-    //Bitmap mCameraImage;
     String longitude;
     String latitude;
-    // String mLongitude;
-    // String mLatitude;
+    String Gender;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    //protected static final String TAG = "TakePictureActivity";
+    Bitmap  mCameraImage;
+    ImageView ivpic;
     // Request code that we will use in onActivityResult() to show that we have
 // got a result from our image capture intent
     //private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
     public MissingPerson() {
-        HttpURL = "https://andrewsimiyu.000webhostapp.com/CrimeAlert/SuspectForm.php";
+        HttpURL = "https://andrewsimiyu.000webhostapp.com/CrimeAlert/MissingPerson.php";
     }
 
     @Override
@@ -59,20 +65,40 @@ public class MissingPerson extends AppCompatActivity {
         F_name = findViewById(R.id.etFname);
         S_name = findViewById(R.id.etSname);
         Age = findViewById(R.id.etAge);
-        Gender = findViewById(R.id.etGender);
         Tel_no = findViewById(R.id.etTelno);
         Description = findViewById(R.id.etDescription);
 
 
-//        btnUpload = findViewById(R.id.btnUpload);
-//        btnUpload.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View arg0) {
-//                requestTakePictureWithCamera();
-//            }
-//        });
+        RadioGroup radioGroup = findViewById(R.id.myRadioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
+            @Override
 
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // find which radio button is selected
+
+                if(checkedId == R.id.Male) {
+
+                    Gender= String.valueOf(checkedId);
+
+                } else if(checkedId == R.id.Female) {
+
+                    Gender= String.valueOf(checkedId);
+                }
+            }
+        });
+
+        ivpic=findViewById(R.id.ivAttachment);
+        ivpic.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0) {
+                if(arg0== ivpic){
+                    //on attachment icon click
+                    requestTakePictureWithCamera();
+                }else{
+                    Toast.makeText(MissingPerson.this,"Please choose a File First",Toast.LENGTH_SHORT).show();
+                }
+            }});
         Done = findViewById(R.id.btnDone);
 
         //Adding Click Listener on button.
@@ -121,6 +147,7 @@ public class MissingPerson extends AppCompatActivity {
                     // If EditText is not empty and CheckEditText = True then this block will execute.
 
                     FormSubmitFunction(F_name_Holder, Age_Holder, Gender_Holder, Description_Holder, S_name_Holder, Tel_no_holder, longitude, latitude);
+                    locationManager.removeUpdates(this);
                 }
 
                 @Override
@@ -139,6 +166,7 @@ public class MissingPerson extends AppCompatActivity {
                 }
             });
         }else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            Toast.makeText(MissingPerson.this,"inside gps",Toast.LENGTH_LONG).show();
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, new LocationListener() {
 
                 @Override
@@ -150,7 +178,7 @@ public class MissingPerson extends AppCompatActivity {
                     // If EditText is not empty and CheckEditText = True then this block will execute.
 
                     FormSubmitFunction(F_name_Holder, Age_Holder, Gender_Holder, Description_Holder, S_name_Holder, Tel_no_holder, longitude, latitude);
-
+                    locationManager.removeUpdates(this);
                 }
 
                 @Override
@@ -173,48 +201,49 @@ public class MissingPerson extends AppCompatActivity {
 
         }
     }
-//      //Allow the user to take a picture using the device camera
-//
-//    protected void requestTakePictureWithCamera() {
-//// create Intent to take a picture and return control to the calling
-//// application
-//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//// start the image capture Intent
-//        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
-//    }
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-//    {
-//        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-//            /*
-//Image captured and saved to default location
-//TODO Check that data.getData() does NOT return null
-//Toast.makeText(this, "Image saved to:\n" + data.getData(),
-//Toast.LENGTH_LONG).show();
-//Toast.makeText(getApplicationContext(),
-//cameraPic.getPixel(1, 1) + "", Toast.LENGTH_LONG)
-//.show();
-//*/
-//            if (resultCode == Activity.RESULT_OK) {
-//                mCameraImage = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
-//            } else if (resultCode == Activity.RESULT_CANCELED) {
-//// User cancelled the image capture
-//                System.out.println("User cancelled the image capture");
-//            } else {
-//// Image capture failed, advise user
-//                Toast.makeText(getApplicationContext(),
-//                        "Image NOT captured successfully",
-//                        Toast.LENGTH_LONG)
-//                        .show();
-//            }
-//        }
-//    }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//// Inflate the menu; this adds items to the action bar if it is present.
-//// getMenuInflater().inflate(R.menu.take_picture, menu);
-//        return true;
-//    }
+
+    //Allow the user to take a picture using the device camera
+
+    protected void requestTakePictureWithCamera() {
+// create Intent to take a picture and return control to the calling
+// application
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+// start the image capture Intent
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+            /*
+Image captured and saved to default location
+TODO Check that data.getData() does NOT return null
+Toast.makeText(this, "Image saved to:\n" + data.getData(),
+Toast.LENGTH_LONG).show();
+Toast.makeText(getApplicationContext(),
+cameraPic.getPixel(1, 1) + "", Toast.LENGTH_LONG)
+.show();
+*/
+            if (resultCode == Activity.RESULT_OK) {
+                mCameraImage = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+// User cancelled the image capture
+                System.out.println("User cancelled the image capture");
+            } else {
+// Image capture failed, advise user
+                Toast.makeText(getApplicationContext(),
+                        "Image NOT captured successfully",
+                        Toast.LENGTH_LONG)
+                        .show();
+            }
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu; this adds items to the action bar if it is present.
+// getMenuInflater().inflate(R.menu.take_picture, menu);
+        return true;
+    }
 
 
     public boolean CheckEditTextIsEmptyOrNot(){
@@ -222,7 +251,7 @@ public class MissingPerson extends AppCompatActivity {
         F_name_Holder = F_name.getText().toString();
         S_name_Holder=S_name.getText().toString();
         Age_Holder = Age.getText().toString();
-        Gender_Holder =Gender.getText().toString();
+        Gender_Holder =Gender;
         Tel_no_holder=Tel_no.getText().toString().trim();
         Description_Holder = Description.getText().toString();
 
@@ -253,6 +282,11 @@ public class MissingPerson extends AppCompatActivity {
                 progressDialog.dismiss();
                 Log.e("**********", "onPostExecute: "+finalResult);
                 Toast.makeText(MissingPerson.this, httpResponseMsg, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MissingPerson.this, Navigation.class);
+
+                intent.putExtra("UserEmail","email");
+
+                startActivity(intent);
 
             }
 

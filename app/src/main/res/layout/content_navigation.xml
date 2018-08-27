@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Navigation"
+    android:background="@color/colorPrimaryDark"
+    tools:showIn="@layout/app_bar_navigation"
+    android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvSuspect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/logged_in_as"
+            android:textColor="@color/White"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/EmailShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/ibtnSuspect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/suspect_info"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle"
+                android:textStyle="italic"
+                android:textColor="@color/Blue"/>
+
+            <Button
+                android:id="@+id/ibtnMissing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/missing_person"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle"
+                android:textStyle="italic"
+                android:textColor="@color/saddlebrown"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ibtnWitness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/witness_info"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                tools:ignore="ButtonStyle"
+                android:textColor="@color/Green"
+                />
+
+            <Button
+                android:id="@+id/ibtnVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/vehicle_info"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                tools:ignore="ButtonStyle"
+                android:textColor="@color/Teal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ibtnUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/upload_evidence"
+                android:textAllCaps="true" android:textStyle="italic"
+                tools:ignore="ButtonStyle"
+                android:textSize="20sp"
+                android:textColor="@color/Maroon"/>
+
+            <Button
+                android:id="@+id/ibtnEmergency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:text="@string/emergency"
+                android:textAllCaps="true"
+                android:textStyle="italic"
+                android:textColor="@color/Red"
+
+                android:textSize="20sp"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:text="@string/log_out"
+            android:textAllCaps="true"
+            android:textColor="@color/Black"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </Button>
+    </LinearLayout>
+
+    </LinearLayout>
+
+
